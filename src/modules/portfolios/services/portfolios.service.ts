@@ -108,12 +108,4 @@ export class PortfoliosService {
     }
     return this.toPortfolio(withDetails);
   }
-
-  async remove(id: string, user: User): Promise<void> {
-    const entity = await this.findById(id);
-    if (entity.userId !== user.id) {
-      throw new ForbiddenException('You can only delete your own portfolio');
-    }
-    await this.portfolioRepository.remove(entity);
-  }
 }

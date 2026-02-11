@@ -1,16 +1,4 @@
-import {
-  Controller,
-  Get,
-  Put,
-  Delete,
-  Body,
-  Param,
-  Query,
-  Req,
-  HttpCode,
-  HttpStatus,
-  UseGuards,
-} from '@nestjs/common';
+import { Controller, Get, Put, Body, Param, Query, Req, UseGuards } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiQuery, ApiBody, ApiBearerAuth } from '@nestjs/swagger';
 import { PortfoliosService } from '../services/portfolios.service';
 import { UpdatePortfolioDto } from '../dto/update-portfolio.dto';
@@ -58,18 +46,5 @@ export class PortfoliosController {
     @Req() req: { user: User },
   ) {
     return this.portfoliosService.update(id, dto, req.user);
-  }
-
-  @Delete(':id')
-  @HttpCode(HttpStatus.NO_CONTENT)
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
-  @ApiOperation({ summary: 'Delete portfolio by id (owner only)' })
-  @ApiParam({ name: 'id' })
-  @ApiResponse({ status: 204, description: 'Portfolio deleted' })
-  @ApiResponse({ status: 403, description: 'Forbidden' })
-  @ApiResponse({ status: 404, description: 'Portfolio not found' })
-  remove(@Param('id') id: string, @Req() req: { user: User }) {
-    return this.portfoliosService.remove(id, req.user);
   }
 }
