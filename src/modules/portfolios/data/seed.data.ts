@@ -183,6 +183,10 @@ export const defaultPortfolio: Portfolio = {
       ],
       education: {
         title: 'Education',
+        school: 'Ho Chi Minh City University of Science (HCMUS)',
+        major: 'Software Engineering',
+        period: '2017 - 2021',
+        gpa: 'GPA: 3.0/4.0',
       },
       contact: {
         title: 'Contact',
@@ -353,6 +357,10 @@ export const defaultPortfolio: Portfolio = {
       ],
       education: {
         title: 'Học vấn',
+        school: 'Đại học Khoa học Tự nhiên TP.HCM (HCMUS)',
+        major: 'Kỹ thuật phần mềm',
+        period: '2017 - 2021',
+        gpa: 'GPA: 3.0/4.0',
       },
       contact: {
         title: 'Liên hệ',

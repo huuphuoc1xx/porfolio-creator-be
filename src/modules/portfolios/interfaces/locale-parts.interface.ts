@@ -66,6 +66,10 @@ export interface ExperienceItem {
 /** Education section */
 export interface EducationContent {
   title?: string;
+  school?: string;
+  major?: string;
+  period?: string;
+  gpa?: string;
 }
 
 /** Contact section */
